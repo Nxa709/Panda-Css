@@ -331,7 +331,7 @@ body{
 
 .section,
 .section2 {
-  width: auto; /* Don't force full width of viewport */
+  width: auto; 
   height: auto;
   background-color: #dde9af;
   display: flex;
@@ -342,3 +342,46 @@ body{
 }
 
 
+.stars-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 999;
+}
+
+
+.star {
+  position: absolute;
+  top: -10px;
+  width: 8px;  
+  height: 8px; 
+  background: #99ccff; 
+  border-radius: 50%;
+  box-shadow: 
+    0 0 12px #99ccff,
+    0 0 20px #66bbff,
+    0 0 28px #3399ff,
+    0 0 36px #007fff; 
+  animation: fall linear forwards;
+  filter: brightness(1.5); 
+}
+
+
+@keyframes fall {
+  to {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+}
+.panda {
+  filter: drop-shadow(0 0 10px rgba(102, 204, 255, 0.8));
+  transition: filter 0.3s ease;
+}
+
+.panda:hover {
+  filter: drop-shadow(0 0 20px rgba(102, 204, 255, 1));
+}
