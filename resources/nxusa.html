@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+ 
+  <div class="stars-container"></div>
+
+  <div class="cartoon-wrapper">
+    <div class="section">
+      <div class="ctn">
+        <div class="shadow"></div>
+        <div class="panda">
+          <div class="leg left-leg"></div>
+          <div class="leg right-leg"></div>
+          <div class="arm left-arm"></div>
+          <div class="arm right-arm"></div>
+          <div class="body">
+            <div class="stripe"></div>
+          </div>
+          <div class="head">
+            <div class="ear"></div>
+            <div class="face">
+              <div class="eye left-eye">
+                <div class="pupil"></div>
+              </div>
+              <div class="eye right-eye">
+                <div class="pupil"></div>
+              </div>
+              <div class="nose"></div>
+              <div class="mouth"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section2">
+      <div class="ctn">
+        <div class="shadow"></div>
+        <div class="panda">
+          <div class="leg left-leg"></div>
+          <div class="leg right-leg"></div>
+          <div class="arm left-arm"></div>
+          <div class="arm right-arm"></div>
+          <div class="body">
+            <div class="stripe"></div>
+            <div class="trouser"></div>
+          </div>
+          <div class="head">
+            <div class="ear"></div>
+            <div class="face">
+              <div class="eye left-eye">
+                <div class="pupil"></div>
+              </div>
+              <div class="eye right-eye">
+                <div class="pupil"></div>
+              </div>
+              <div class="nose"></div>
+              <div class="mouth"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <audio autoplay loop controls>
+      <source src="Pretty Little Baby.mp3" type="audio/mpeg" />
+      Your browser does not support the audio element.
+    </audio>
+  </div>
+
+  
+  <script>
+    const starsContainer = document.querySelector('.stars-container');
+
+    function createStar() {
+      const star = document.createElement('div');
+      star.classList.add('star');
+      star.style.left = Math.random() * 100 + 'vw';
+      star.style.animationDuration = (Math.random() * 2 + 2) + 's';
+      star.style.opacity = Math.random();
+      starsContainer.appendChild(star);
+
+      setTimeout(() => {
+        star.remove();
+      }, 4000);
+    }
+
+    setInterval(createStar, 150); 
+  </script>
+
+</body>
+</html>
